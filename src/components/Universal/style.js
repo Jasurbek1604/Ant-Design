@@ -10,6 +10,6 @@ export const Content = styled.div`
   padding: 15px;
   margin: 5px;
   overflow-y: auto;
-  width: 75%;
+  width: 80%;
   ${scrollStyle}
 `;

@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 import { scrollStyle } from "../../utils/routes";
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
-  width: 25%;
-  padding: 10px 5px;
+  width: 20%;
+  padding: 25px 5px 10px 5px;
   overflow-y: auto;
   box-shadow: ${({ mode }) =>
     mode === "light"

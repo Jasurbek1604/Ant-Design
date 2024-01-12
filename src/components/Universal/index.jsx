@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 import Header from "../Header";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
 import { Content, Wrapper } from "./style";
+import { useModeContext } from "../../context/ModeContext";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -13,8 +14,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Universal = () => {
-  const [mode, setMode] = useState(localStorage.getItem("mode") || "light");
-
+  const [mode, setMode] = useModeContext();
   const theme = {
     bg: mode === "light" ? "var(--bgLight)" : "var(--bgDark)",
     color: mode === "light" ? "var(--light)" : "var(--dark)",
@@ -23,9 +23,9 @@ const Universal = () => {
     <div>
       <ThemeProvider theme={theme}>
         <GlobalStyle />
-        <Header data={[mode, setMode]} />
+        <Header />
         <Wrapper>
-          <Sidebar mode={mode} />
+          <Sidebar />
           <Content style={{ padding: "25px" }}>
             <Outlet />
           </Content>

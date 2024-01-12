@@ -1,8 +1,10 @@
 import React from "react";
 import { Container, Content } from "./style";
 import { routes } from "../../utils/routes";
+import { useModeContext } from "../../context/ModeContext";
 
 const Home = () => {
+  const [mode] = useModeContext();
   return (
     <Container>
       <div className="title">Components Overview</div>
@@ -13,14 +15,20 @@ const Home = () => {
         additionally.
       </div>
       <Content>
-        {routes.map(
-          ({ id, link, path }) =>
+        {routes.map(({ id, link, path, title, Icon }) =>
+          title ? (
+            <div className="example" style={{ gridColumn: "1/5" }} key={id}>
+              {title}
+            </div>
+          ) : (
             link &&
             path !== "/" && (
-              <Content.Item to={path} key={id}>
+              <Content.Item mode={mode} to={path} key={id}>
                 <Content.BoxTitle>{link}</Content.BoxTitle>
+                <Content.Icon>{Icon}</Content.Icon>
               </Content.Item>
             )
+          )
         )}
       </Content>
     </Container>

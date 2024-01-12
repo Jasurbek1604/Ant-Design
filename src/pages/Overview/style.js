@@ -10,14 +10,16 @@ export const Content = styled.div`
 `;
 
 Content.Item = styled(NavLink)`
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  height: 100px;
   transition: 0.3s;
   text-decoration: none;
-
+  background: #fff;
   &:hover {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    box-shadow: ${({ mode }) =>
+      mode === "light"
+        ? "0 0 15px rgba(0, 0, 0, 0.2)"
+        : "0 0 15px rgba(255, 255, 255, 0.5)"};
   }
 `;
 
@@ -27,4 +29,12 @@ Content.BoxTitle = styled.div`
   font-size: 14px;
   font-weight: 600;
   color: #000000;
+`;
+
+Content.Icon = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 180px;
 `;

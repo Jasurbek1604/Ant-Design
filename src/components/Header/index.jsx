@@ -1,9 +1,10 @@
 import React from "react";
 import { Container, Content } from "./style";
 import { useNavigate } from "react-router-dom";
+import { useModeContext } from "../../context/ModeContext";
 
-const Header = ({ data }) => {
-  const [mode, setMode] = data;
+const Header = () => {
+  const [mode, setMode] = useModeContext();
   const naviagte = useNavigate();
   return (
     <Container mode={mode}>

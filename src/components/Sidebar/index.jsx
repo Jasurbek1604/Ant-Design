@@ -1,15 +1,10 @@
 import React, { useState } from "react";
 import { Container, Title, Link } from "./style";
 import { routes } from "../../utils/routes";
+import { useModeContext } from "../../context/ModeContext";
 
-const Sidebar = ({ mode }) => {
-  const [path, setPath] = useState("");
-  function capitalizeFirstLetter(str) {
-    return str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-  }
-  document.title = `Ant Design ${
-    path !== "/" ? ` - ${capitalizeFirstLetter(path.slice(1))}` : ""
-  }`;
+const Sidebar = () => {
+  const [mode] = useModeContext();
   return (
     <Container mode={mode}>
       {routes.map(({ id, title, link, path }) =>
@@ -18,7 +13,7 @@ const Sidebar = ({ mode }) => {
             {title}
           </Title>
         ) : (
-          <Link key={id} to={path} onClick={() => setPath(path)} mode={mode}>
+          <Link key={id} to={path} mode={mode}>
             {link}
           </Link>
         )
