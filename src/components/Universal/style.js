@@ -7,8 +7,7 @@ export const Wrapper = styled.div`
 `;
 
 export const Content = styled.div`
-  padding: 15px;
-  margin: 5px;
+  margin: 5px 5px 5px 10px;
   overflow-y: auto;
   width: 80%;
   ${scrollStyle}

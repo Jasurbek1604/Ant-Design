@@ -14,6 +14,7 @@ const Header = () => {
           <Content.Title>Ant Design</Content.Title>
         </Content.Left>
         <Content.Right>
+          <div>Jasurbek Oʻtelbayev</div>
           <div className="div">
             <label htmlFor="dark">
               {mode === "light" ? (

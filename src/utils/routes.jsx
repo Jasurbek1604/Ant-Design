@@ -1,5 +1,6 @@
 import styled, { css } from "styled-components";
 import Overview from "../pages/Overview";
+import Button from "../pages/Button";
 import svg1 from "../assets/icons/1.svg?react";
 import svg2 from "../assets/icons/2.svg?react";
 import svg3 from "../assets/icons/3.svg?react";
@@ -293,12 +294,12 @@ export const routes = [
     path: "/",
     element: <Overview />,
   },
-  { id: 1, title: "General", element: <h1>General</h1> },
+  { id: 1, title: "General" },
   {
     id: 3,
     link: "Button",
     path: "/btn",
-    element: <h1>Button</h1>,
+    element: <Button />,
     Icon: <Svg1 />,
   },
   {
@@ -322,7 +323,7 @@ export const routes = [
     element: <h1>Typography</h1>,
     Icon: <Svg4 />,
   },
-  { id: 7, title: "Layout", element: <h1>Layout</h1> },
+  { id: 7, title: "Layout" },
   {
     id: 8,
     link: "Divider",
@@ -358,7 +359,7 @@ export const routes = [
     element: <h1>Space</h1>,
     Icon: <Svg9 />,
   },
-  { id: 13, title: "Navigation", element: <h1>Navigation</h1> },
+  { id: 13, title: "Navigation" },
   {
     id: 14,
     link: "Anchor",
@@ -401,7 +402,7 @@ export const routes = [
     element: <h1>Steps</h1>,
     Icon: <Svg15 />,
   },
-  { id: 20, title: "Data Entry", element: <h1>Data</h1> },
+  { id: 20, title: "Data Entry" },
   {
     id: 21,
     link: "AutoComplate",
@@ -528,7 +529,7 @@ export const routes = [
     element: <h1>Upload</h1>,
     Icon: <Svg33 />,
   },
-  { id: 39, title: "Data Display", element: <h1>Data</h1> },
+  { id: 39, title: "Data Display" },
   {
     id: 40,
     link: "Avatar",
@@ -676,7 +677,7 @@ export const routes = [
     element: <h1>Tree</h1>,
     Icon: <Svg54 />,
   },
-  { id: 61, title: "Feedback", element: <h1>Feedback</h1> },
+  { id: 61, title: "Feedback" },
   {
     id: 62,
     link: "Alert",
@@ -754,7 +755,7 @@ export const routes = [
     element: <h1>Watermark</h1>,
     Icon: <Svg65 />,
   },
-  { id: 73, title: "Other", element: <h1>Other</h1> },
+  { id: 73, title: "Other" },
   {
     id: 74,
     link: "Affix",
