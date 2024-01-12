@@ -6,7 +6,7 @@ const Header = ({ data }) => {
   const [mode, setMode] = data;
   const naviagte = useNavigate();
   return (
-    <Container>
+    <Container mode={mode}>
       <Content>
         <Content.Left onClick={() => naviagte("/")}>
           <Content.Logo />

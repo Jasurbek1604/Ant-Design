@@ -20,8 +20,10 @@ export const Container = styled.div`
   height: 60px;
   display: flex;
   align-items: center;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.03),
-    0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02);
+  box-shadow: ${({ mode }) =>
+    mode === "light"
+      ? "0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)"
+      : "0 1px 2px 0 rgba(255, 255, 255, 0.1), 0 1px 6px -1px rgba(255, 255, 255, 0.02), 0 2px 4px 0 rgba(255, 255, 255, 0.02)"};
 `;
 
 export const Content = styled.div`
