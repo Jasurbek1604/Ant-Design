@@ -19,3 +19,27 @@ body {
   --dark:#fff;
   --light:black;
 }
+
+.title{
+  font-weight: 700;
+  font-size: 30px;
+}
+
+.description {
+  line-height: 25px;
+  font-weight: 400;
+  font-size:14px;  
+  margin: 20px 0;
+}
+
+.example{
+  font-weight: 500;
+  font-size:24px;
+}
+
+.code {
+  background:lightgray;
+  padding: 2px 5px;
+  border-radius: 3px;
+  border: 1px solid gray;
+}

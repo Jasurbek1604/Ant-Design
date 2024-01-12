@@ -3,7 +3,7 @@ import Overview from "../pages/Overview";
 
 export const scrollStyle = css`
   &::-webkit-scrollbar {
-    width: 4px;
+    width: 3px;
     border-radius: 5px;
   }
   &::-webkit-scrollbar-track {

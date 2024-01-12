@@ -22,7 +22,7 @@ export const Title = styled.div`
   padding: 10px 0;
   border-bottom: ${({ mode }) =>
     mode === "light"
-      ? "1px solid rgba(0, 0, 0, 0.4)"
+      ? "1px solid rgba(0, 0, 0, 0.1)"
       : "1px solid rgba(255, 255, 255, 0.4)"};
   font-weight: 500;
   color: ${({ mode }) =>
