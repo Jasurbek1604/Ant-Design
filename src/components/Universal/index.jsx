@@ -3,6 +3,7 @@ import Header from "../Header";
 import { Outlet } from "react-router-dom";
 import Sidebar from "../Sidebar";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
+import { Content, Wrapper } from "./style";
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -23,8 +24,12 @@ const Universal = () => {
       <ThemeProvider theme={theme}>
         <GlobalStyle />
         <Header data={[mode, setMode]} />
-        <Outlet />
-        <Sidebar />
+        <Wrapper>
+          <Sidebar mode={mode} />
+          <Content style={{ padding: "25px" }}>
+            <Outlet />
+          </Content>
+        </Wrapper>
       </ThemeProvider>
     </div>
   );

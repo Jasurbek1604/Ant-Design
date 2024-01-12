@@ -22,16 +22,17 @@ export const Container = styled.div`
   align-items: center;
   box-shadow: ${({ mode }) =>
     mode === "light"
-      ? "0 1px 2px 0 rgba(0, 0, 0, 0.1), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px 0 rgba(0, 0, 0, 0.02)"
-      : "0 1px 2px 0 rgba(255, 255, 255, 0.1), 0 1px 6px -1px rgba(255, 255, 255, 0.02), 0 2px 4px 0 rgba(255, 255, 255, 0.02)"};
+      ? "0 1px 5px 0 rgba(0, 0, 0, 0.1), 0 1px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 5px 0 rgba(0, 0, 0, 0.02)"
+      : "0 1px 5px 0 rgba(255, 255, 255, 0.1), 0 1px 6px -1px rgba(255, 255, 255, 0.02), 0 2px 5px 0 rgba(255, 255, 255, 0.02)"};
 `;
 
 export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 95%;
-  margin: 0 auto;
+  width: 100%;
+  padding: 0 20px;
+  margin: auto;
 `;
 
 Content.Left = styled.div`

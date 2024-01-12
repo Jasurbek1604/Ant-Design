@@ -48,7 +48,7 @@ const Header = ({ data }) => {
             </label>
           </div>
           <div>
-            <Content.Link target="blank" to="https://youtube.com/frontwebuz">
+            <Content.Link target="blank" to="https://youtube.com/@frontwebuz">
               {mode === "light" ? (
                 <Content.Youtube mode={mode} />
               ) : (
