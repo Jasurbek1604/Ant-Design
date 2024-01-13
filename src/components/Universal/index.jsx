@@ -14,7 +14,7 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const Universal = () => {
-  const [mode, setMode] = useModeContext();
+  const [mode] = useModeContext();
   const theme = {
     bg: mode === "light" ? "var(--bgLight)" : "var(--bgDark)",
     color: mode === "light" ? "var(--light)" : "var(--dark)",
@@ -26,7 +26,7 @@ const Universal = () => {
         <Header />
         <Wrapper>
           <Sidebar />
-          <Content style={{ padding: "25px" }}>
+          <Content>
             <Outlet />
           </Content>
         </Wrapper>

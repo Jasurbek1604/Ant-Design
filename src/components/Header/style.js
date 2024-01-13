@@ -6,6 +6,8 @@ import github from "../../assets/icons/github.svg?react";
 import sun from "../../assets/icons/sun.svg?react";
 import moon from "../../assets/icons/moon.svg?react";
 import youtube from "../../assets/icons/youtube.svg?react";
+import menu from "../../assets/icons/menu.svg?react";
+import close from "../../assets/icons/close.svg?react";
 
 import instagramLight from "../../assets/icons/instagram-light.svg?react";
 import telegramLight from "../../assets/icons/telegram-light.svg?react";
@@ -13,6 +15,8 @@ import githubLight from "../../assets/icons/github-light.svg?react";
 import sunLight from "../../assets/icons/sun-light.svg?react";
 import moonLight from "../../assets/icons/moon-light.svg?react";
 import youtubeLight from "../../assets/icons/youtube-light.svg?react";
+import menuLight from "../../assets/icons/menu-light.svg?react";
+import closeLight from "../../assets/icons/close-light.svg?react";
 
 import { NavLink } from "react-router-dom";
 
@@ -33,6 +37,20 @@ export const Content = styled.div`
   width: 100%;
   padding: 0 20px;
   margin: auto;
+  .name {
+    white-space: nowrap;
+  }
+  .btn {
+    display: none;
+  }
+  @media (max-width: 800px) {
+    padding: 0 10px;
+    .btn {
+      display: block;
+      width: 100px;
+      text-align: end;
+    }
+  }
 `;
 
 Content.Left = styled.div`
@@ -43,19 +61,58 @@ Content.Left = styled.div`
 Content.Title = styled.div`
   font-weight: 700;
   font-size: 18px;
+  @media (max-width: 800px) {
+    font-size: 16px;
+  }
 `;
+
+const styleBtn = css`
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+`;
+
 Content.Logo = styled(logo)`
   width: 32px;
   height: 32px;
 `;
 
+Content.Menu = styled(menu)`
+  ${styleBtn}
+`;
+Content.MenuLight = styled(menuLight)`
+  ${styleBtn}
+`;
+
+Content.Close = styled(close)`
+  ${styleBtn}
+`;
+Content.CloseLight = styled(closeLight)`
+  ${styleBtn}
+`;
+
 Content.Right = styled.div`
-  display: flex;
+  display: ${({ $sidebar }) => ($sidebar === "true" ? "none" : "flex")};
   align-items: center;
   gap: 50px;
   .div {
     input {
       display: none;
+    }
+  }
+  @media (max-width: 800px) {
+    display: ${({ $sidebar }) => ($sidebar !== "true" ? "none" : "flex")};
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+    .name {
+      font-weight: 700;
+      font-size: 20px;
+    }
+    .wrapper {
+      display: flex;
+      gap: 25px;
     }
   }
 `;

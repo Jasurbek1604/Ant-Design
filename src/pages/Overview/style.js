@@ -5,12 +5,30 @@ export const Container = styled.div``;
 
 export const Content = styled.div`
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
   gap: 30px;
+  grid-template-columns: repeat(4, 1fr);
+  .content-title {
+    grid-column: 1/5;
+  }
+  @media (max-width: 1100px) {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    .content-title {
+      grid-column: 1/4;
+    }
+  }
+  @media (max-width: 600px) {
+    gap: 10px;
+    grid-template-columns: repeat(2, 1fr);
+    .content-title {
+      grid-column: 1/3;
+    }
+  }
 `;
 
 Content.Item = styled(NavLink)`
   border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 100%;
   border-radius: 10px;
   transition: 0.3s;
   text-decoration: none;

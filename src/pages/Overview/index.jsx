@@ -17,7 +17,7 @@ const Home = () => {
       <Content>
         {routes.map(({ id, link, path, title, Icon }) =>
           title ? (
-            <div className="example" style={{ gridColumn: "1/5" }} key={id}>
+            <div className="example content-title" key={id}>
               {title}
             </div>
           ) : (

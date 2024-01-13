@@ -1,59 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React from "react";
 import Shablon from "../../components/Shablon";
 import { Content } from "./style";
 
 const Button = () => {
-  const videoRef = useRef(null);
-  const [photoData, setPhotoData] = useState(null);
-  useEffect(() => {
-    const getMedia = async () => {
-      try {
-        const stream = await navigator.mediaDevices.getUserMedia({
-          video: true,
-        });
-
-        if (videoRef.current) {
-          videoRef.current.srcObject = stream;
-        }
-      } catch (error) {
-        console.error("Error accessing camera:", error);
-      }
-    };
-
-    getMedia();
-
-    return () => {
-      // Cleanup: stop the video stream when the component unmounts
-      if (videoRef.current) {
-        const stream = videoRef.current.srcObject;
-        if (stream) {
-          const tracks = stream.getTracks();
-          tracks.forEach((track) => track.stop());
-        }
-      }
-    };
-  }, []);
-
-  const handleCapture = () => {
-    const canvas = document.createElement("canvas");
-    const video = videoRef.current;
-
-    if (video) {
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-
-      const context = canvas.getContext("2d");
-      context.drawImage(video, 0, 0, video.videoWidth, video.videoHeight);
-
-      const dataURL = canvas.toDataURL("image/png");
-      setPhotoData(dataURL);
-    }
-  };
-
-  // setTimeout(() => {
-  //   handleCapture();
-  // }, 2000);
-
   return (
     <div>
       <div className="title">Button</div>
@@ -148,11 +97,7 @@ const Button = () => {
             desc={"danger is a property of button after antd 4.0."}
           ></Shablon>
         </Content.Row>
-        <Shablon>
-          <video ref={videoRef} autoPlay playsInline />
-          <button onClick={handleCapture}>Take Photo</button>
-          {photoData && <img src={photoData} alt="Captured" />}
-        </Shablon>
+        <Shablon></Shablon>
       </Content>
     </div>
   );

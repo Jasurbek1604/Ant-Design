@@ -3,7 +3,7 @@ import { scrollStyle } from "../../utils/routes";
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
-  width: 20%;
+  width: 250px;
   padding: 25px 5px 10px 5px;
   overflow-y: auto;
   box-shadow: ${({ mode }) =>
@@ -14,10 +14,21 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1px;
+  @media (max-width: 800px) {
+    transition: 0.5s;
+    position: fixed;
+    overflow-x: auto;
+    z-index: 2;
+    height: 100vh;
+    width: 70%;
+    left: ${({ $isopen }) => ($isopen === "true" ? 0 : "-100%")};
+    top: 0;
+    background: ${({ mode }) => (mode === "light" ? "#fff" : "black")};
+  }
 `;
 
 export const Title = styled.div`
-  font-size: 12px;
+  font-size: 14px;
   margin: 5px 15px;
   padding: 10px 0;
   border-bottom: ${({ mode }) =>
@@ -30,7 +41,7 @@ export const Title = styled.div`
 `;
 export const Link = styled(NavLink)`
   transition: 0.3s;
-  font-size: 12px;
+  font-size: 14px;
   text-decoration: none;
   padding: 10px 20px;
   border-radius: 8px;

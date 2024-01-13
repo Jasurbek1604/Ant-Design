@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import { useModeContext } from "../../context/ModeContext";
 
 const Header = () => {
-  const [mode, setMode] = useModeContext();
+  const [mode, setMode, isopen, setIsOpen] = useModeContext();
   const naviagte = useNavigate();
   return (
     <Container mode={mode}>
@@ -13,8 +13,22 @@ const Header = () => {
           <Content.Logo />
           <Content.Title>Ant Design</Content.Title>
         </Content.Left>
+
+        <div className="btn">
+          {isopen ? (
+            mode === "light" ? (
+              <Content.Close onClick={() => setIsOpen(!isopen)} />
+            ) : (
+              <Content.CloseLight onClick={() => setIsOpen(!isopen)} />
+            )
+          ) : mode === "light" ? (
+            <Content.Menu onClick={() => setIsOpen(!isopen)} />
+          ) : (
+            <Content.MenuLight onClick={() => setIsOpen(!isopen)} />
+          )}
+        </div>
         <Content.Right>
-          <div>Jasurbek Oʻtelbayev</div>
+          <div className="name">Jasurbek Oʻtelbayev</div>
           <div className="div">
             <label htmlFor="dark">
               {mode === "light" ? (
