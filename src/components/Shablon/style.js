@@ -2,6 +2,7 @@ import styled, { css } from "styled-components";
 import lightning from "../../assets/icons/lightning.svg?react";
 import copy from "../../assets/icons/copy.svg?react";
 import code from "../../assets/icons/code.svg?react";
+import edit from "../../assets/icons/edit.svg?react";
 
 export const Container = styled.div`
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -11,12 +12,11 @@ export const Container = styled.div`
 `;
 
 export const Footer = styled.div`
-  padding: 15px;
+  padding: 8px;
   border-top: 1px dashed rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 10px;
 `;
 
 export const Desc = styled.div``;
@@ -38,11 +38,25 @@ Desc.Title = styled.div`
   .type {
     font-size: 15px;
     font-weight: 600;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
 `;
 
 Desc.Content = styled.div`
   padding: 15px;
+`;
+
+Desc.Edit = styled(edit)`
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.2);
+  }
 `;
 
 export const Content = styled.div`

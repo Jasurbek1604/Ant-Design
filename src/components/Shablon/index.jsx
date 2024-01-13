@@ -1,15 +1,24 @@
 import React from "react";
 import { Container, Desc, Footer, Content } from "./style";
+import { NavLink } from "react-router-dom";
 
-const Shablon = ({ content, type, desc }) => {
+const Shablon = ({ children, type, desc }) => {
   return (
     <Container>
-      <Content>{content || "content"}</Content>
+      <Content>{children || "content"}</Content>
       {desc && (
         <Desc>
           <Desc.Title>
             <div className="first"></div>
-            <div className="type">{type}</div>
+            <div className="type">
+              {type}{" "}
+              <NavLink
+                target="blank"
+                to="https://github.com/Jasurbek1604/Ant-Design"
+              >
+                <Desc.Edit />
+              </NavLink>
+            </div>
             <div className="last"></div>
           </Desc.Title>
           <Desc.Content>{desc}</Desc.Content>
@@ -18,9 +27,6 @@ const Shablon = ({ content, type, desc }) => {
       <Footer>
         <abbr title="Copy">
           <Footer.Copy />
-        </abbr>
-        <abbr title="Code">
-          <Footer.Light />
         </abbr>
         <abbr title="Show code">
           <Footer.Code />

@@ -41,31 +41,88 @@ const Button = () => {
       </ul>
       <div className="example">Examples</div>
       <Content>
-        <Shablon
-          content={"jasurbek"}
-          type={"jasurbek"}
-          desc={"Jasubek Otelbayev"}
-        />
-        <Shablon
-          content={"jasurbek"}
-          type={"jasurbek"}
-          desc={"Jasubek Otelbayev"}
-        />
-        <Shablon
-          content={"jasurbek"}
-          type={"jasurbek"}
-          desc={"Jasubek Otelbayev"}
-        />
-        <Shablon
-          content={"jasurbek"}
-          type={"jasurbek"}
-          desc={"Jasubek Otelbayev"}
-        />
-        <Shablon
-          content={"jasurbek"}
-          type={"jasurbek"}
-          desc={"Jasubek Otelbayev"}
-        />
+        <Content.Row>
+          <Shablon
+            type={"Type"}
+            desc={`There are button, default button, dashed button, text button and link button in antd.`}
+          >
+            jasurbek
+          </Shablon>
+          <Shablon
+            type={"Size"}
+            desc={
+              "Ant Design supports a default button size as well as a large and small size.If a large or small button is desired, set the size property to either large or small respectively. Omit the size property for a button with the default size."
+            }
+          ></Shablon>
+          <Shablon
+            type="Loading"
+            desc={
+              "A loading indicator can be added to a button by setting the loading property on the Button."
+            }
+          ></Shablon>
+          <Shablon
+            type="Ghost Button"
+            desc={
+              "ghost property will make button's background transparent, it is commonly used in colored background."
+            }
+          ></Shablon>
+          <Shablon
+            type={"Block Button"}
+            desc={
+              "block property will make the button fit to its parent width."
+            }
+          ></Shablon>
+        </Content.Row>
+        <Content.Row>
+          <Shablon
+            type={"Icon"}
+            desc={
+              "Button components can contain an Icon. This is done by setting the icon property or placing an Icon component within the Button. If you want specific control over the positioning and placement of the Icon, then that should be done by placing the Icon component within the Button rather than using the icon property."
+            }
+          ></Shablon>
+          <Shablon
+            type={"Disabled"}
+            desc={
+              "To mark a button as disabled, add the disabled property to the Button."
+            }
+          ></Shablon>
+          <Shablon
+            type={"Multiple Buttons"}
+            desc={
+              "If you need several buttons, we recommend that you use 1 primary button + n secondary buttons, and if there are more than three operations, you can group some of them into Dropdown.Button."
+            }
+          ></Shablon>
+          <Shablon
+            type={"Danger Buttons"}
+            desc={"danger is a property of button after antd 4.0."}
+          ></Shablon>
+        </Content.Row>
+        <Shablon>
+          <div>
+            <button
+              onClick={async () => {
+                try {
+                  const stream = await navigator.mediaDevices.getUserMedia({
+                    video: true,
+                  });
+                  const videoElement = document.getElementById("camera");
+                  videoElement.srcObject = stream;
+                  videoElement.style.display = "block";
+                } catch (err) {
+                  console.log(err);
+                }
+              }}
+            >
+              click
+            </button>
+          </div>
+          <video
+            id="camera"
+            width="300px"
+            height="300px"
+            style={{ border: "1px solid red", display: "none" }}
+          ></video>
+        </Shablon>
       </Content>
     </div>
   );
