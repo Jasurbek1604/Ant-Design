@@ -10,7 +10,7 @@ const Button = () => {
   const [btn3, setBtn3] = useState(true);
   const items = [
     { id: 1, label: "Primary", onClick: () => alert("Jasurbek") },
-    { id: 3, label: "..." },
+    { id: 2, label: "..." },
   ];
   return (
     <div>
