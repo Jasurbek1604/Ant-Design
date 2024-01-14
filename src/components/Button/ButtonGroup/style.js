@@ -9,7 +9,12 @@ export const Content = styled.div`
 Content.Item = styled.button`
   border-radius: ${({ id, $length }) =>
     id === 1 ? "8px 0 0 8px" : $length === id ? "0 8px 8px 0" : "0"};
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  color: ${({ $select }) =>
+    $select === true ? "var(--primary)" : "rgba(0, 0, 0, 0.6);"};
+  border: ${({ $select }) =>
+    $select === true
+      ? "1px solid var(--primary)"
+      : "1px solid rgba(0, 0, 0, 0.2);"};
   margin: 0;
   padding: 0;
   padding: 8px 10px;

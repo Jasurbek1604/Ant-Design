@@ -9,6 +9,12 @@ const Button = () => {
   const [btn2, setBtn2] = useState(true);
   const [btn3, setBtn3] = useState(true);
   const [action, setAction] = useState(false);
+  const [isSelect, setIsSelect] = useState({
+    item1: true,
+    item2: false,
+    item3: false,
+  });
+  const [size, setSize] = useState(20);
   const items = [
     { id: 1, label: "Primary" },
     {
@@ -82,17 +88,55 @@ const Button = () => {
             type={"Size"}
             desc={`Ant Design supports a default button <span class="code">size</span> as well as a <span class="code">large</span> and <span class="code">small</span> size. If a large or small button is desired, set the <span class="code">size</span> property to either large or small respectively. Omit the size property for a button with the default size.`}
           >
+            <ButtonGroup
+              items={[
+                {
+                  id: 1,
+                  label: "Large",
+                  select: isSelect.item1,
+                  onClick: () => {
+                    setIsSelect({ item1: true, item2: false, item3: false });
+                    setSize(20);
+                  },
+                },
+                {
+                  id: 2,
+                  label: "Default",
+                  select: isSelect.item2,
+                  onClick: () => {
+                    setIsSelect({ item1: false, item2: true, item3: false });
+                    setSize(16);
+                  },
+                },
+                {
+                  id: 3,
+                  label: "Small",
+                  select: isSelect.item3,
+                  onClick: () => {
+                    setIsSelect({ item1: false, item2: false, item3: true });
+                    setSize(12);
+                  },
+                },
+              ]}
+            />
             <Content.Top>
-              <Buttons type="primary">Primary </Buttons>
-              <Buttons>Default </Buttons>
-              <Buttons type="dashed">Dashed </Buttons>
-              <Buttons type="link">Link </Buttons>
-              <Buttons type="primary">
+              <Buttons style={{ fontSize: `${size}px` }} type="primary">
+                Primary{" "}
+              </Buttons>
+              <Buttons style={{ fontSize: `${size}px` }}>Default </Buttons>
+              <Buttons style={{ fontSize: `${size}px` }} type="dashed">
+                Dashed{" "}
+              </Buttons>
+              <Buttons style={{ fontSize: `${size}px` }} type="link">
+                Link{" "}
+              </Buttons>
+              <Buttons style={{ fontSize: `${size}px` }} type="primary">
                 <Icons.Download />
               </Buttons>
               <Buttons
                 type="primary"
                 style={{
+                  fontSize: `${size}px`,
                   borderRadius: "90px",
                   padding: "8px",
                   margin: 0,
@@ -100,14 +144,20 @@ const Button = () => {
               >
                 <Icons.Download />
               </Buttons>
-              <Buttons type="primary" style={{ borderRadius: "20px" }}>
+              <Buttons
+                style={{ fontSize: `${size}px`, borderRadius: "20px" }}
+                type="primary"
+              >
                 <Icons.Download />
               </Buttons>
-              <Buttons type="primary" style={{ borderRadius: "20px" }}>
+              <Buttons
+                style={{ fontSize: `${size}px`, borderRadius: "20px" }}
+                type="primary"
+              >
                 <Icons.Download />
                 Download
               </Buttons>
-              <Buttons type="primary">
+              <Buttons style={{ fontSize: `${size}px` }} type="primary">
                 <Icons.Download />
                 Download
               </Buttons>

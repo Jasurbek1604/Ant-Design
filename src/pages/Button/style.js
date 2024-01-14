@@ -6,11 +6,10 @@ import spin from "../../assets/animation/spin.svg?react";
 import styled from "styled-components";
 
 export const Content = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 10px;
   @media (max-width: 700px) {
-    grid-template-columns: 1fr;
+    flex-direction: column;
   }
 `;
 

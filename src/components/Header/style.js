@@ -21,6 +21,8 @@ import closeLight from "../../assets/icons/close-light.svg?react";
 import { NavLink } from "react-router-dom";
 
 export const Container = styled.div`
+  position: relative;
+  z-index: 2;
   height: 60px;
   display: flex;
   align-items: center;

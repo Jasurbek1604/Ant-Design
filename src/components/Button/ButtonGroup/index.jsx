@@ -5,12 +5,22 @@ const ButtonGroup = ({ items }) => {
   return (
     <Content>
       {items.map(
-        ({ id, label, onClick, onMouseEnter, onMouseLeave, action, abs }) => (
+        ({
+          id,
+          label,
+          onClick,
+          onMouseEnter,
+          onMouseLeave,
+          action,
+          abs,
+          select,
+        }) => (
           <Content.Item
             onClick={onClick}
             $length={items?.length}
             onMouseEnter={onMouseEnter}
             onMouseLeave={onMouseLeave}
+            $select={select}
             id={id}
             key={id}
             action={action}

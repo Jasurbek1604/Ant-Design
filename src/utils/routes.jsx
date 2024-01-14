@@ -3,7 +3,6 @@ import Overview from "../pages/Overview";
 import Button from "../pages/Button";
 import svg1 from "../assets/icons/1.svg?react";
 import svg2 from "../assets/icons/2.svg?react";
-import svg3 from "../assets/icons/3.svg?react";
 import svg4 from "../assets/icons/4.svg?react";
 import svg5 from "../assets/icons/5.svg?react";
 import svg6 from "../assets/icons/6.svg?react";
@@ -70,14 +69,17 @@ import svg66 from "../assets/icons/66.svg?react";
 import svg67 from "../assets/icons/67.svg?react";
 import svg68 from "../assets/icons/68.svg?react";
 import FloatButton from "../pages/FloatButton";
+import Typography from "../pages/Typography";
+import Divider from "../pages/Divider";
+import Flex from "../pages/Flex";
+import Grid from "../pages/Grid";
+import Layout from "../pages/Layout";
+import Space from "../pages/Space";
 
 const Svg1 = styled(svg1)`
   width: 70%;
 `;
 const Svg2 = styled(svg2)`
-  width: 70%;
-`;
-const Svg3 = styled(svg3)`
   width: 70%;
 `;
 const Svg4 = styled(svg4)`
@@ -311,17 +313,10 @@ export const routes = [
     Icon: <Svg2 />,
   },
   {
-    id: 5,
-    link: "Icon",
-    path: "/icon",
-    element: <h1>Icon</h1>,
-    Icon: <Svg3 />,
-  },
-  {
     id: 6,
     link: "Typography",
     path: "/typography",
-    element: <h1>Typography</h1>,
+    element: <Typography />,
     Icon: <Svg4 />,
   },
   { id: 7, title: "Layout" },
@@ -329,35 +324,35 @@ export const routes = [
     id: 8,
     link: "Divider",
     path: "/divider",
-    element: <h1>Divider</h1>,
+    element: <Divider />,
     Icon: <Svg5 />,
   },
   {
     id: 9,
     link: "Flex",
     path: "/flex",
-    element: <h1>Flex</h1>,
+    element: <Flex />,
     Icon: <Svg6 />,
   },
   {
     id: 10,
     link: "Grid",
     path: "/grid",
-    element: <h1>Grid</h1>,
+    element: <Grid />,
     Icon: <Svg7 />,
   },
   {
     id: 11,
     link: "Layout",
     path: "/layout",
-    element: <h1>Layout</h1>,
+    element: <Layout />,
     Icon: <Svg8 />,
   },
   {
     id: 12,
     link: "Space",
     path: "/space",
-    element: <h1>Space</h1>,
+    element: <Space />,
     Icon: <Svg9 />,
   },
   { id: 13, title: "Navigation" },
