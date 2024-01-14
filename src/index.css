@@ -18,6 +18,13 @@ body {
 
   --dark:#fff;
   --light:black;
+
+  --btn:grba(0,0,0,0.8);
+  --primary:#1677ff;
+  --white:#fff;
+  --danger:#ff4d4f;
+  --secondary:lightgray;
+
 }
 
 .title{
@@ -39,6 +46,8 @@ body {
 }
 
 .code {
+  font-family:monospace;
+  font-size: 12px;
   background:lightgray;
   padding: 2px 5px;
   border-radius: 3px;

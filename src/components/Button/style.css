@@ -1,0 +1,27 @@
+button {
+    transition: 0.3s;
+    font-family: 'Montserrat';
+    font-size: 14px;
+    background:transparent;
+    padding: 7px 10px;
+    border: 1px solid var(--secondary);
+    color: grba(0,0,0,0.8);
+    font-weight: 400;
+    border-radius: 7px;
+    margin: 8px;
+    cursor: pointer;
+    letter-spacing: 0.2px;
+}
+
+button:hover {
+    color:var(--primary);
+    border-color: var(--primary);
+    
+    .cr {
+        stroke: var(--primary);
+      }
+}
+
+button:active{
+    box-shadow: 0 0 7px var(--primary);
+}

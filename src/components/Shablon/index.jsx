@@ -6,12 +6,12 @@ const Shablon = ({ children, type, desc }) => {
   return (
     <Container>
       <Content>{children || "content"}</Content>
-      {desc && (
+      {type && (
         <Desc>
           <Desc.Title>
             <div className="first"></div>
             <div className="type">
-              {type}{" "}
+              {type}
               <NavLink
                 target="blank"
                 to="https://github.com/Jasurbek1604/Ant-Design"
@@ -21,7 +21,7 @@ const Shablon = ({ children, type, desc }) => {
             </div>
             <div className="last"></div>
           </Desc.Title>
-          <Desc.Content>{desc}</Desc.Content>
+          <Desc.Content dangerouslySetInnerHTML={{ __html: desc }} />
         </Desc>
       )}
       <Footer>

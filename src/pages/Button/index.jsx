@@ -1,8 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import Shablon from "../../components/Shablon";
-import { Content } from "./style";
+import { Content, Icons } from "./style";
+import Buttons from "../../components/Button";
 
 const Button = () => {
+  const [btn1, setBtn1] = useState(true);
+  const [btn2, setBtn2] = useState(true);
+  const [btn3, setBtn3] = useState(true);
   return (
     <div>
       <div className="title">Button</div>
@@ -44,47 +48,182 @@ const Button = () => {
         <Content.Row>
           <Shablon
             type={"Type"}
-            desc={`There are button, default button, dashed button, text button and link button in antd.`}
+            desc={
+              'There are <span class="code">primary</span> button, <span class="code">default</span> button, <span class="code">dashed</span> button, <span class="code">text</span> button and link button in antd.'
+            }
           >
-            jasurbek
+            <Content.Top>
+              <Buttons type="primary">Primary Button</Buttons>
+              <Buttons>Default Button</Buttons>
+              <Buttons type="dashed">Dashed Button</Buttons>
+              <Buttons type="text">Text Button</Buttons>
+              <Buttons type="link">Link Button</Buttons>
+            </Content.Top>
           </Shablon>
           <Shablon
             type={"Size"}
-            desc={
-              "Ant Design supports a default button size as well as a large and small size.If a large or small button is desired, set the size property to either large or small respectively. Omit the size property for a button with the default size."
-            }
-          ></Shablon>
+            desc={`Ant Design supports a default button <span class="code">size</span> as well as a <span class="code">large</span> and <span class="code">small</span> size. If a large or small button is desired, set the <span class="code">size</span> property to either large or small respectively. Omit the size property for a button with the default size.`}
+          >
+            <Content.Top>
+              <Buttons type="primary">Primary </Buttons>
+              <Buttons>Default </Buttons>
+              <Buttons type="dashed">Dashed </Buttons>
+              <Buttons type="link">Link </Buttons>
+              <Buttons type="primary">
+                <Icons.Download />
+              </Buttons>
+              <Buttons
+                type="primary"
+                style={{
+                  borderRadius: "90px",
+                  padding: "8px",
+                  margin: 0,
+                }}
+              >
+                <Icons.Download />
+              </Buttons>
+              <Buttons type="primary" style={{ borderRadius: "20px" }}>
+                <Icons.Download />
+              </Buttons>
+              <Buttons type="primary" style={{ borderRadius: "20px" }}>
+                <Icons.Download />
+                Download
+              </Buttons>
+              <Buttons type="primary">
+                <Icons.Download />
+                Download
+              </Buttons>
+            </Content.Top>
+          </Shablon>
           <Shablon
             type="Loading"
-            desc={
-              "A loading indicator can be added to a button by setting the loading property on the Button."
-            }
-          ></Shablon>
+            desc={`A loading indicator can be added to a button by setting the <span class="code">loading</span> property on the <span class="code">Button<span>.`}
+          >
+            <Content.Top>
+              <Buttons type="primary">
+                <Icons.Spin /> Loading
+              </Buttons>
+              <Buttons type="primary" style={{ padding: "6px" }}>
+                <Icons.Spin /> Loading
+              </Buttons>
+              <Buttons type="primary">
+                <Icons.Spin />
+              </Buttons>
+              <Buttons
+                type="primary"
+                onClick={() => {
+                  setBtn1(false);
+                  setTimeout(() => setBtn1(true), 3000);
+                }}
+              >
+                {btn1 ? (
+                  "Click me!"
+                ) : (
+                  <>
+                    <Icons.Spin /> Click me!
+                  </>
+                )}
+              </Buttons>
+              <Buttons
+                type="primary"
+                onClick={() => {
+                  setBtn2(false);
+                  setTimeout(() => setBtn2(true), 3000);
+                }}
+              >
+                {btn2 ? (
+                  <>
+                    <Icons.Power /> Click me!
+                  </>
+                ) : (
+                  <>
+                    <Icons.Spin /> Click me!
+                  </>
+                )}
+              </Buttons>
+              <Buttons
+                type="primary"
+                onClick={() => {
+                  setBtn3(false);
+                  setTimeout(() => setBtn3(true), 3000);
+                }}
+              >
+                {btn3 ? <Icons.Power /> : <Icons.Spin />}
+              </Buttons>
+            </Content.Top>
+          </Shablon>
           <Shablon
             type="Ghost Button"
-            desc={
-              "ghost property will make button's background transparent, it is commonly used in colored background."
-            }
-          ></Shablon>
+            desc={` <span class="code">ghost</span> property will make button's background transparent, it is commonly used in colored background.`}
+          >
+            <Content.Top
+              style={{ background: "rgba(0,0,0,0.2)", padding: "15px" }}
+            >
+              <Buttons type={"ghostPrimary"}>Primary</Buttons>
+              <Buttons type={"ghostDefault"}>Default</Buttons>
+              <Buttons type={"ghostDashed"}>Dashed</Buttons>
+              <Buttons type={"ghostDanger"}>Danger</Buttons>
+            </Content.Top>
+          </Shablon>
           <Shablon
             type={"Block Button"}
-            desc={
-              "block property will make the button fit to its parent width."
-            }
-          ></Shablon>
+            desc={`<span class="code">block</span> property will make the button fit to its parent width.`}
+          >
+            <Content.Top center="true">
+              <Buttons type="primary">Primary Button</Buttons>
+              <Buttons>Default Button</Buttons>
+              <Buttons type="dashed">Dashed Button</Buttons>
+              <Buttons type="disabled">Disabled Button</Buttons>
+              <Buttons type="text">Text Button</Buttons>
+              <Buttons type="link">Link Button</Buttons>
+            </Content.Top>
+          </Shablon>
         </Content.Row>
         <Content.Row>
           <Shablon
             type={"Icon"}
             desc={
-              "Button components can contain an Icon. This is done by setting the icon property or placing an Icon component within the Button. If you want specific control over the positioning and placement of the Icon, then that should be done by placing the Icon component within the Button rather than using the icon property."
+              '<span class="code">Button</span> components can contain an <span class="code">Icon</span>. This is done by setting the <span class="code">icon</span> property or placing an <span class="code">Icon</span> component within the <span class="code">Button</span>. If you want specific control over the positioning and placement of the <span class="code">Icon</span>, then that should be done by placing the <span class="code">Icon</span> component within the <span class="code">Button</span> rather than using the icon property.'
             }
-          ></Shablon>
+          >
+            <Content.Top>
+              <Buttons style={{ borderRadius: "70px" }} type="primary">
+                <Icons.Search />
+              </Buttons>
+              <Buttons style={{ borderRadius: "50px" }} type="primary">
+                A
+              </Buttons>
+              <Buttons type="primary">
+                <Icons.Search /> Search
+              </Buttons>
+              <Buttons style={{ borderRadius: "70px" }}>
+                <Icons.SearchLight />
+              </Buttons>
+              <Buttons>
+                <Icons.SearchLight /> Search
+              </Buttons>
+              <Buttons style={{ borderRadius: "70px" }}>
+                <Icons.SearchLight />
+              </Buttons>
+              <Buttons>
+                <Icons.SearchLight /> Search
+              </Buttons>
+              <Buttons type="dashed" style={{ borderRadius: "70px" }}>
+                <Icons.SearchLight />
+              </Buttons>
+              <Buttons type="dashed">
+                <Icons.SearchLight /> Search
+              </Buttons>
+              <div className="btn-light">
+                <Buttons>
+                  <Icons.SearchLight />
+                </Buttons>
+              </div>
+            </Content.Top>
+          </Shablon>
           <Shablon
             type={"Disabled"}
-            desc={
-              "To mark a button as disabled, add the disabled property to the Button."
-            }
+            desc={`To mark a button as <span class="code">disabled</span>, add the disabled property to the <span class="code">Button</span>.`}
           ></Shablon>
           <Shablon
             type={"Multiple Buttons"}
@@ -94,10 +233,17 @@ const Button = () => {
           ></Shablon>
           <Shablon
             type={"Danger Buttons"}
-            desc={"danger is a property of button after antd 4.0."}
-          ></Shablon>
+            desc={`<span class="code">danger</span> is a property of button after antd 4.0.`}
+          >
+            <Content.Top>
+              <Buttons type="dangerPrimary">Primary Button</Buttons>
+              <Buttons type="defaultDanger">Default Button</Buttons>
+              <Buttons type="dangerDashed">Dashed Button</Buttons>
+              <Buttons type="dangerText">Text Button</Buttons>
+              <Buttons type="dangerLink">Link Button</Buttons>
+            </Content.Top>
+          </Shablon>
         </Content.Row>
-        <Shablon></Shablon>
       </Content>
     </div>
   );
