@@ -2,11 +2,16 @@ import React, { useState } from "react";
 import Shablon from "../../components/Shablon";
 import { Content, Icons } from "./style";
 import Buttons from "../../components/Button";
+import ButtonGroup from "../../components/Button/ButtonGroup";
 
 const Button = () => {
   const [btn1, setBtn1] = useState(true);
   const [btn2, setBtn2] = useState(true);
   const [btn3, setBtn3] = useState(true);
+  const items = [
+    { id: 1, label: "Primary", onClick: () => alert("Jasurbek") },
+    { id: 3, label: "..." },
+  ];
   return (
     <div>
       <div className="title">Button</div>
@@ -169,7 +174,7 @@ const Button = () => {
             type={"Block Button"}
             desc={`<span class="code">block</span> property will make the button fit to its parent width.`}
           >
-            <Content.Top center="true">
+            <Content.Top $center="true">
               <Buttons type="primary">Primary Button</Buttons>
               <Buttons>Default Button</Buttons>
               <Buttons type="dashed">Dashed Button</Buttons>
@@ -187,7 +192,11 @@ const Button = () => {
             }
           >
             <Content.Top>
-              <Buttons style={{ borderRadius: "70px" }} type="primary">
+              <Buttons
+                hoverText={"search"}
+                style={{ borderRadius: "70px" }}
+                type="primary"
+              >
                 <Icons.Search />
               </Buttons>
               <Buttons style={{ borderRadius: "50px" }} type="primary">
@@ -196,19 +205,23 @@ const Button = () => {
               <Buttons type="primary">
                 <Icons.Search /> Search
               </Buttons>
-              <Buttons style={{ borderRadius: "70px" }}>
+              <Buttons hoverText={"search"} style={{ borderRadius: "70px" }}>
                 <Icons.SearchLight />
               </Buttons>
               <Buttons>
                 <Icons.SearchLight /> Search
               </Buttons>
-              <Buttons style={{ borderRadius: "70px" }}>
+              <Buttons hoverText={"search"} style={{ borderRadius: "70px" }}>
                 <Icons.SearchLight />
               </Buttons>
-              <Buttons>
+              <Buttons hoverText={"search"}>
                 <Icons.SearchLight /> Search
               </Buttons>
-              <Buttons type="dashed" style={{ borderRadius: "70px" }}>
+              <Buttons
+                hoverText={"search"}
+                type="dashed"
+                style={{ borderRadius: "70px" }}
+              >
                 <Icons.SearchLight />
               </Buttons>
               <Buttons type="dashed">
@@ -224,13 +237,71 @@ const Button = () => {
           <Shablon
             type={"Disabled"}
             desc={`To mark a button as <span class="code">disabled</span>, add the disabled property to the <span class="code">Button</span>.`}
-          ></Shablon>
+          >
+            <div className="flex">
+              <Buttons type="primary">Primary </Buttons>
+              <Buttons type="disabled">Primary(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons>Default </Buttons>
+              <Buttons type="disabled">Default(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="dashed">Dashed </Buttons>
+              <Buttons type="dashedDisabled">Dashed(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="text">Text</Buttons>
+              <Buttons type="textDisabled">Text(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="link">Link</Buttons>
+              <Buttons type="linkDisabled">Link(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="primary">Href Primary </Buttons>
+              <Buttons type="disabled">Href Primary(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="defaultDanger">Default Button</Buttons>
+              <Buttons type="disabled">Danger Desault(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="dangerDashed">Danger Dashed</Buttons>
+              <Buttons type="dashedDisabled">Danger Dashed(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="dangerText">Danger Text</Buttons>
+              <Buttons type="textDisabled">Danger Text(disabled)</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="dangerLink">Danger Link</Buttons>
+              <Buttons type="linkDisabled">Danger Link(disabled)</Buttons>
+            </div>
+            <div
+              className="flex"
+              style={{ background: "rgba(0,0,0,0.2)", padding: "15px" }}
+            >
+              <Buttons type={"ghostDefault"}>Ghost</Buttons>
+              <Buttons type={"disabled"}>Ghost Disabled</Buttons>
+            </div>
+          </Shablon>
           <Shablon
             type={"Multiple Buttons"}
             desc={
               "If you need several buttons, we recommend that you use 1 primary button + n secondary buttons, and if there are more than three operations, you can group some of them into Dropdown.Button."
             }
-          ></Shablon>
+          >
+            <div className="flex">
+              <Buttons type="primary">Primary</Buttons>
+            </div>
+            <div className="flex">
+              <Buttons type="secondary">Secondary</Buttons>
+            </div>
+            <div className="flex">
+              <ButtonGroup items={items} />
+            </div>
+          </Shablon>
           <Shablon
             type={"Danger Buttons"}
             desc={`<span class="code">danger</span> is a property of button after antd 4.0.`}

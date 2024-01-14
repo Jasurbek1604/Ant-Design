@@ -19,6 +19,9 @@ Content.Row = styled.div`
   flex-direction: column;
   gap: 10px;
   width: 100%;
+  .flex {
+    display: flex;
+  }
 `;
 
 export const Icons = styled.div``;
@@ -53,7 +56,7 @@ Content.Top = styled.div`
   gap: 5px;
   flex-wrap: wrap;
   button {
-    justify-content: ${({ center }) => center && "center"};
-    width: ${({ center }) => center && "100%"};
+    justify-content: ${({ $center }) => $center && "center"};
+    width: ${({ $center }) => $center && "100%"};
   }
 `;

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Desc, Footer, Content } from "./style";
 import { NavLink } from "react-router-dom";
+import Buttons from "../Button";
 
 const Shablon = ({ children, type, desc }) => {
+  const [copy, setCopy] = useState(false);
   return (
     <Container>
       <Content>{children || "content"}</Content>
@@ -25,12 +27,16 @@ const Shablon = ({ children, type, desc }) => {
         </Desc>
       )}
       <Footer>
-        <abbr title="Copy">
+        <Buttons
+          style={{ padding: 0 }}
+          hoverText={copy ? "Copied!" : "Copy"}
+          onClick={() => setCopy(true)}
+        >
           <Footer.Copy />
-        </abbr>
-        <abbr title="Show code">
+        </Buttons>
+        <Buttons style={{ padding: 0 }} hoverText={"Code"}>
           <Footer.Code />
-        </abbr>
+        </Buttons>
       </Footer>
     </Container>
   );
