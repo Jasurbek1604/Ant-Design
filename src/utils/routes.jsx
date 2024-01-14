@@ -69,6 +69,7 @@ import svg65 from "../assets/icons/65.svg?react";
 import svg66 from "../assets/icons/66.svg?react";
 import svg67 from "../assets/icons/67.svg?react";
 import svg68 from "../assets/icons/68.svg?react";
+import FloatButton from "../pages/FloatButton";
 
 const Svg1 = styled(svg1)`
   width: 70%;
@@ -306,7 +307,7 @@ export const routes = [
     id: 4,
     link: "FloatButton",
     path: "/float-btn",
-    element: <h1>FloatButton</h1>,
+    element: <FloatButton />,
     Icon: <Svg2 />,
   },
   {

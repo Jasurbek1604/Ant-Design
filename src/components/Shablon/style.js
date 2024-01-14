@@ -48,7 +48,7 @@ Desc.Title = styled.div`
 Desc.Content = styled.div`
   padding: 15px;
   line-height: 20px;
-  font-size: 12px;
+  font-size: 14px;
 `;
 
 Desc.Edit = styled(edit)`
