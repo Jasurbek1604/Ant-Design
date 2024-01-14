@@ -14,4 +14,22 @@ Content.Item = styled.button`
   padding: 0;
   padding: 8px 10px;
   border-left: ${({ id }) => id !== 1 && "1px solid  rgba(0, 0, 0, 0.2)"};
+  position: relative;
+  .abs {
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    top: 100%;
+    left: -100%;
+    padding: 10px;
+    border-radius: 8px;
+    background: #fff;
+    min-width: 70px;
+    .abs-item {
+      padding: 5px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+      &:hover {
+        color: rgba(0, 0, 0, 0.5);
+      }
+    }
+  }
 `;

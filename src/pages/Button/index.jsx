@@ -8,9 +8,22 @@ const Button = () => {
   const [btn1, setBtn1] = useState(true);
   const [btn2, setBtn2] = useState(true);
   const [btn3, setBtn3] = useState(true);
+  const [action, setAction] = useState(false);
   const items = [
-    { id: 1, label: "Primary", onClick: () => alert("Jasurbek") },
-    { id: 2, label: "..." },
+    { id: 1, label: "Primary" },
+    {
+      id: 2,
+      label: "...",
+      action: action.toString(),
+      abs: [
+        { id: 1, label: "Item 1" },
+        { id: 2, label: "Item 2" },
+        { id: 3, label: "Item 3" },
+        { id: 4, label: "Item 4" },
+      ],
+      onMouseEnter: () => setAction(!action),
+      onMouseLeave: () => setAction(!action),
+    },
   ];
   return (
     <div>
