@@ -1,4 +1,6 @@
 import React from "react";
+import { Content } from "../Button/style";
+import Shablon from "../../components/Shablon";
 
 const Space = () => {
   return (
@@ -29,6 +31,37 @@ const Space = () => {
         </li>
       </ul>
       <div className="example">Examples</div>
+      <Content>
+        <Content.Row>
+          <Shablon
+            type="Basic Usage"
+            desc="Crowded components horizontal spacing."
+          ></Shablon>
+          <Shablon
+            type="Vertical Space"
+            desc="Crowded components vertical spacing."
+          ></Shablon>
+          <Shablon
+            type="Space size"
+            desc="Use size to set the spacing, Three sizes are preset: small, middle, large. You can also customize the spacing. If size is not set, the spacing is small."
+          ></Shablon>
+          <Shablon type="Align" desc="Config item align."></Shablon>
+          <Shablon type="Wrap" desc="Auto wrap line."></Shablon>
+          <Shablon type="Split" desc="Crowded components split."></Shablon>
+          <Shablon
+            type="Compact Mode for form component"
+            desc="Compact Mode for form component."
+          ></Shablon>
+          <Shablon
+            type="Button Compact Mode"
+            desc="Button component compact example."
+          ></Shablon>
+          <Shablon
+            type="Vertical Compact Mode"
+            desc="Vertical Mode for Space.Compact, support Button only."
+          ></Shablon>
+        </Content.Row>
+      </Content>
     </div>
   );
 };

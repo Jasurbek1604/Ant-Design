@@ -1,4 +1,6 @@
 import React from "react";
+import { Content } from "../Button/style";
+import Shablon from "../../components/Shablon";
 
 const Grid = () => {
   return (
@@ -68,6 +70,58 @@ const Grid = () => {
         but does not rigidly adhere to the grid layout.
       </div>
       <div className="example">Examples</div>
+      <Content>
+        <Content.Row>
+          <Shablon
+            type="Basic Grid"
+            desc="From the stack to the horizontal arrangement. You can create a basic grid system by using a single set of Row and Col grid assembly, all of the columns (Col) must be placed in Row."
+          ></Shablon>
+          <Shablon
+            type="Grid Gutter"
+            desc="You can use the gutter property of Row as grid spacing, we recommend set it to (16 + 8n) px (n stands for natural number). You can set it to a object like { xs: 8, sm: 16, md: 24, lg: 32 } for responsive design. You can use an array to set vertical spacing, [horizontal, vertical] [16, { xs: 8, sm: 16, md: 24, lg: 32 }]. vertical gutter was supported after 3.24.0."
+          ></Shablon>
+          <Shablon
+            type="Column offset"
+            desc="offset can set the column to the right side. For example, using offset = {4} can set the element shifted to the right four columns width."
+          ></Shablon>
+          <Shablon
+            type="Grid sort"
+            desc="By using push and pull class you can easily change column order."
+          ></Shablon>
+          <Shablon
+            type="Typesetting"
+            desc="Child elements depending on the value of the start, center, end, space-between, space-around and space-evenly, which are defined in its parent node typesetting mode."
+          ></Shablon>
+          <Shablon
+            type="Alignment"
+            desc="Child elements vertically aligned."
+          ></Shablon>
+          <Shablon
+            type="Order"
+            desc="To change the element sort by order."
+          ></Shablon>
+          <Shablon
+            type="Flex Strech"
+            desc="Col provides flex prop to support fill rest."
+          ></Shablon>
+          <Shablon
+            type="Responsive"
+            desc="Referring to the Bootstrap responsive design, here preset six dimensions: xs sm md lg xl xxl."
+          ></Shablon>
+          <Shablon
+            type="More Responsive"
+            desc="span pull push offset order property can be embedded into xs sm md lg xl xxl properties to use, where xs={6} is equivalent to xs={{span: 6}}."
+          ></Shablon>
+          <Shablon
+            type="Playgroung"
+            desc="A simple playground for column count and gutter."
+          ></Shablon>
+          <Shablon
+            type="useBreackpoint Hook"
+            desc="Use <span class='code'>useBreakpoint</span> Hook provide personalized layout."
+          ></Shablon>
+        </Content.Row>
+      </Content>
     </div>
   );
 };

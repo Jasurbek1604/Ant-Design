@@ -1,4 +1,6 @@
 import React from "react";
+import { Content } from "../Button/style";
+import Shablon from "../../components/Shablon";
 
 const Flex = () => {
   return (
@@ -30,6 +32,21 @@ const Flex = () => {
         </li>
       </ul>
       <div className="example">Examples</div>
+      <Content>
+        <Content.Row>
+          <Shablon type="Basic" desc="The basic usage."></Shablon>
+          <Shablon type="Align" desc="Set align."></Shablon>
+          <Shablon
+            type="Gap"
+            desc="Set the <span class='code'>gap</span>  between elements, which has three preset sizes: <span class='code'>small</span>, <span class='code'>middle</span> , <span class='code'>large</span> , You can also customize the gap size."
+          ></Shablon>
+          <Shablon type="Wrap" desc="Auto wrap line."></Shablon>
+          <Shablon
+            type="Combination"
+            desc="Nesting can achieve more complex layouts."
+          ></Shablon>
+        </Content.Row>
+      </Content>
     </div>
   );
 };
