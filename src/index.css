@@ -11,7 +11,7 @@
 body {
   font-family: 'Montserrat' , sans-serif;
 }
-
+  
 :root{
   --bgLight:#fff;
   --bgDark:#212121;
@@ -21,6 +21,7 @@ body {
 
   --btn:grba(0,0,0,0.8);
   --primary:#1677ff;
+  --primaryHover:#1677ffc4;
   --white:#fff;
   --danger:#ff4d4f;
   --secondary:lightgray;

@@ -1,8 +1,9 @@
 import React from "react";
 import { Content } from "../Button/style";
 import Shablon from "../../components/Shablon";
-import { Container, TopBar } from "./style";
+import { Container, TopBar, Icons } from "./style";
 import topbar from "../../assets/icons/topbar.png";
+import Buttons from "../../components/Button";
 
 const FloatButton = () => {
   return (
@@ -22,6 +23,9 @@ const FloatButton = () => {
           <Shablon type={"Basic"} desc="The most basic usage.">
             <Container>
               <TopBar src={topbar} />
+              <Container.Data>
+                <Icons.Doc />
+              </Container.Data>
             </Container>
           </Shablon>
           <Shablon
@@ -32,6 +36,10 @@ const FloatButton = () => {
           >
             <Container>
               <TopBar src={topbar} />
+              <Container.Data>
+                <Icons.HeadPhonesLight type="primary" />
+                <Icons.HeadPhonesLight border={8} type="primary" />
+              </Container.Data>
             </Container>
           </Shablon>
           <Shablon
@@ -42,6 +50,9 @@ const FloatButton = () => {
           >
             <Container>
               <TopBar src={topbar} />
+              <Container.Data>
+                <Icons.Doc />
+              </Container.Data>
             </Container>
           </Shablon>
           <Shablon
@@ -52,6 +63,10 @@ const FloatButton = () => {
           >
             <Container>
               <TopBar src={topbar} />
+              <Container.Data>
+                <Icons.HeadPhonesLight type="primary" />
+                <Icons.HeadPhonesLight type="primary" />
+              </Container.Data>
             </Container>
           </Shablon>
           <Shablon
