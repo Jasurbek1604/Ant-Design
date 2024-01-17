@@ -5,8 +5,10 @@ import questionLight from "../../assets/icons/question-light.svg?react";
 import headphones from "../../assets/icons/headphones.svg?react";
 import headphonesLight from "../../assets/icons/headphones-light.svg?react";
 import refresh from "../../assets/icons/refresh.svg?react";
-import upload from "../../assets/icons/upload.svg";
-import message from "../../assets/icons/message.svg";
+import upload from "../../assets/icons/upload.svg?react";
+import message from "../../assets/icons/message.svg?react";
+import x from "../../assets/icons/close.svg?react";
+import xLight from "../../assets/icons/close-light.svg?react";
 
 export const Icons = styled.div``;
 
@@ -51,6 +53,12 @@ Icons.Upload = styled(upload)`
 Icons.Message = styled(message)`
   ${iconStyle}
 `;
+Icons.Close = styled(x)`
+  ${iconStyle}
+`;
+Icons.CloseLight = styled(xLight)`
+  ${iconStyle}
+`;
 
 export const Container = styled.div`
   height: 389px;
@@ -59,6 +67,12 @@ export const Container = styled.div`
   position: relative;
   @media (max-width: 800px) {
     height: 300px;
+  }
+  .wrapper {
+    width: 100%;
+    padding: 10px;
+    height: 90%;
+    overflow-y: auto;
   }
 `;
 
@@ -76,4 +90,59 @@ Container.Data = styled.div`
   display: flex;
   justify-content: end;
   align-items: center;
+  .div {
+    position: relative;
+    &:hover {
+      .hoverContent {
+        opacity: 1;
+      }
+    }
+    .hoverContent {
+      transition: 0.2s;
+      position: absolute;
+      top: 50%;
+      transform: translate(-100%, -50%);
+      color: #fff;
+      background: black;
+      padding: 8px;
+      border-radius: 3px;
+      opacity: 0;
+      .arrow {
+        width: 16px;
+        height: 16px;
+        background: black;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        z-index: -2;
+        border-radius: 2px;
+        transform: translate(3px, -50%) rotate(45deg);
+      }
+    }
+  }
+  .divv {
+    position: relative;
+    transition: 0.5s;
+    &:hover {
+      .content {
+        top: -200%;
+        opacity: 1;
+        z-index: 0;
+      }
+    }
+    .content {
+      transition: 0.2s;
+      position: absolute;
+      top: 0;
+      opacity: 0;
+      z-index: -2;
+    }
+    .clicked {
+      transition: 0.2s;
+      position: absolute;
+      top: ${({ $click }) => ($click ? "-200%" : 0)};
+      opacity: ${({ $click }) => ($click ? 1 : 0)};
+      z-index: ${({ $click }) => ($click ? 0 : -1)};
+    }
+  }
 `;
